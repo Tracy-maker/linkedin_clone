@@ -20,7 +20,6 @@ const HeaderOptionTitle = styled.h3`
 `;
 
 const HeaderOptionIcon = styled.img`
-  margin-top: 5px;
   object-fit: contain;
   height: 25px;
   width: 25px;
@@ -29,7 +28,7 @@ const HeaderOptionIcon = styled.img`
 const HeaderOption = ({ avatar, Icon, title }) => {
   return (
     <HeaderOptionContainer>
-      {Icon && <HeaderOptionIcon as={Icon} />}
+      {Icon && <HeaderOptionIcon src={Icon} />}
       {avatar && <Avatar src={avatar} />}
       <HeaderOptionTitle>{title}</HeaderOptionTitle>
     </HeaderOptionContainer>

@@ -3,22 +3,18 @@ import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar";
 import styled from "styled-components";
 
-const LinkedInContainer = styled.div`
-  background-color: #f3f2ef;
-`;
-
-const LinkedInBody = styled.div`
-  display: flex;
-`;
+const LinkedInContainer= styled.div`
+ background-color: #f3f2ef;
+`
 
 function App() {
   return (
-    <LinkedInContainer>
+    <div className="app">
       <Header />
-      <LinkedInBody>
+      <div>
         <Sidebar />
-      </LinkedInBody>
-    </LinkedInContainer>
+      </div>
+    </div>
   );
 }
 

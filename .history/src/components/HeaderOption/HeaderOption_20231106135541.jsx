@@ -20,10 +20,10 @@ const HeaderOptionTitle = styled.h3`
 `;
 
 const HeaderOptionIcon = styled.img`
-  margin-top: 5px;
+  margin-top: 10px;
   object-fit: contain;
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
 `;
 
 const HeaderOption = ({ avatar, Icon, title }) => {

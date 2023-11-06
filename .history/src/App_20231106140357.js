@@ -7,18 +7,14 @@ const LinkedInContainer = styled.div`
   background-color: #f3f2ef;
 `;
 
-const LinkedInBody = styled.div`
-  display: flex;
-`;
-
 function App() {
   return (
-    <LinkedInContainer>
+    <div className="app">
       <Header />
-      <LinkedInBody>
+      <div>
         <Sidebar />
-      </LinkedInBody>
-    </LinkedInContainer>
+      </div>
+    </div>
   );
 }
 

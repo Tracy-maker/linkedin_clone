@@ -29,7 +29,7 @@ const HeaderOptionIcon = styled.img`
 const HeaderOption = ({ avatar, Icon, title }) => {
   return (
     <HeaderOptionContainer>
-      {Icon && <HeaderOptionIcon as={Icon} />}
+    <HeaderOptionIcon as={Icon} />
       {avatar && <Avatar src={avatar} />}
       <HeaderOptionTitle>{title}</HeaderOptionTitle>
     </HeaderOptionContainer>

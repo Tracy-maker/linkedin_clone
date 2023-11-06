@@ -15,9 +15,9 @@ function App() {
   return (
     <LinkedInContainer>
       <Header />
-      <LinkedInBody>
+      <div>
         <Sidebar />
-      </LinkedInBody>
+      </div>
     </LinkedInContainer>
   );
 }

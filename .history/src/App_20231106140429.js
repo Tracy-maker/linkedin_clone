@@ -13,12 +13,12 @@ const LinkedInBody = styled.div`
 
 function App() {
   return (
-    <LinkedInContainer>
+    <div className="app">
       <Header />
-      <LinkedInBody>
+      <div>
         <Sidebar />
-      </LinkedInBody>
-    </LinkedInContainer>
+      </div>
+    </div>
   );
 }
 

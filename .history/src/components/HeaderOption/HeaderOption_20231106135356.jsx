@@ -20,9 +20,8 @@ const HeaderOptionTitle = styled.h3`
 `;
 
 const HeaderOptionIcon = styled.img`
-  margin-top: 5px;
   object-fit: contain;
-  height: 25px;
+  height: 30px;
   width: 25px;
 `;
 

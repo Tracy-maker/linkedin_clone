@@ -74,7 +74,7 @@ function Header() {
         <HeaderOption
           avatar="https://i.ibb.co/MRHHtS5/Wechat-IMG7.jpg"
           title="me"
-          size='300'
+          height={124}
         />
       </RightContainer>
     </HeaderContainer>
