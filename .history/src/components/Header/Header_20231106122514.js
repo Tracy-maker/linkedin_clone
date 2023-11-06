@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { Search } from "@mui/icons-material";
 
 function Header() {
   return (
@@ -11,6 +12,7 @@ function Header() {
           alt="linedIn-clone"
         />
         <div className="header_search">
+          <Search/>
           <input type="text" />
         </div>
       </div>
