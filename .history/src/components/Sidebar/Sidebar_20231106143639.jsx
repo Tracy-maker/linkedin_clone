@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Avatar } from "@mui/material";
+import styled from 'styled-components';
+import { Avatar } from '@mui/material';
 
 const SidebarContainer = styled.div`
   position: sticky;
@@ -92,7 +92,7 @@ const RecentItem = styled.div`
   cursor: pointer;
   margin-bottom: 5px;
   padding: 5px;
-
+  
   &:hover {
     background-color: whitesmoke;
     border-radius: 10px;
@@ -106,7 +106,7 @@ const HashSymbol = styled.span`
   margin-left: 5px;
 `;
 
-function Sidebar () {
+const Sidebar = () => {
   const recentItem = (topic) => (
     <RecentItem>
       <HashSymbol>#</HashSymbol>
@@ -118,36 +118,34 @@ function Sidebar () {
     <SidebarContainer>
       <SidebarTop>
         <TopImage
-          src="https://marketplace.canva.com/EAD2962NKnQ/2/0/1600w/canva-rainbow-gradient-pink-and-purple-virtual-background-_Tcjok-d9b4.jpg"
-          alt="logo-image"
-        />
-        <SidebarAvatar
           src="https://i.ibb.co/MRHHtS5/Wechat-IMG7.jpg"
-          alt="logo-image"
+          alt=""
         />
-        <TopHeading>Yingxin Zhang</TopHeading>
-        <TopSubHeading>ydlvns@gmail.com</TopSubHeading>
+        <SidebarAvatar className="sidebar__avatar" />
+        <TopHeading>Umair Khan</TopHeading>
+        <TopSubHeading>umair.k2607@gmail.com</TopSubHeading>
       </SidebarTop>
       <SidebarStats>
         <StatContainer>
           <StatText>Who Viewed You</StatText>
-          <StatNumber>432</StatNumber>
+          <StatNumber>2,832</StatNumber>
         </StatContainer>
         <StatContainer>
           <StatText>Views on posts</StatText>
-          <StatNumber>82</StatNumber>
+          <StatNumber>4,582</StatNumber>
         </StatContainer>
       </SidebarStats>
       <SidebarBottom>
         <BottomText>Recent</BottomText>
-        {recentItem("Design")}
-        {recentItem("Programming")}
-        {recentItem("React.js")}
-        {recentItem("Redux")}
-        {recentItem("Next.js")}
+        {recentItem("hacking")}
+        {recentItem("programing")}
+        {recentItem("imrankahn")}
+        {recentItem("pakistan")}
+        {recentItem("fifa")}
       </SidebarBottom>
     </SidebarContainer>
   );
 };
 
 export default Sidebar;
+

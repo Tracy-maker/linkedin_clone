@@ -25,7 +25,7 @@ const SidebarTop = styled.div`
 const TopImage = styled.img`
   margin-bottom: -20px;
   width: 100%;
-  height: 60px;
+  height: 150px;
   object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -106,7 +106,7 @@ const HashSymbol = styled.span`
   margin-left: 5px;
 `;
 
-function Sidebar () {
+const Sidebar = () => {
   const recentItem = (topic) => (
     <RecentItem>
       <HashSymbol>#</HashSymbol>
@@ -118,13 +118,10 @@ function Sidebar () {
     <SidebarContainer>
       <SidebarTop>
         <TopImage
-          src="https://marketplace.canva.com/EAD2962NKnQ/2/0/1600w/canva-rainbow-gradient-pink-and-purple-virtual-background-_Tcjok-d9b4.jpg"
-          alt="logo-image"
-        />
-        <SidebarAvatar
           src="https://i.ibb.co/MRHHtS5/Wechat-IMG7.jpg"
           alt="logo-image"
         />
+        <SidebarAvatar />
         <TopHeading>Yingxin Zhang</TopHeading>
         <TopSubHeading>ydlvns@gmail.com</TopSubHeading>
       </SidebarTop>
@@ -140,11 +137,11 @@ function Sidebar () {
       </SidebarStats>
       <SidebarBottom>
         <BottomText>Recent</BottomText>
-        {recentItem("Design")}
-        {recentItem("Programming")}
-        {recentItem("React.js")}
-        {recentItem("Redux")}
-        {recentItem("Next.js")}
+        {recentItem("hacking")}
+        {recentItem("programing")}
+        {recentItem("imrankahn")}
+        {recentItem("pakistan")}
+        {recentItem("fifa")}
       </SidebarBottom>
     </SidebarContainer>
   );

@@ -106,7 +106,7 @@ const HashSymbol = styled.span`
   margin-left: 5px;
 `;
 
-function Sidebar () {
+const Sidebar = () => {
   const recentItem = (topic) => (
     <RecentItem>
       <HashSymbol>#</HashSymbol>
@@ -118,7 +118,7 @@ function Sidebar () {
     <SidebarContainer>
       <SidebarTop>
         <TopImage
-          src="https://marketplace.canva.com/EAD2962NKnQ/2/0/1600w/canva-rainbow-gradient-pink-and-purple-virtual-background-_Tcjok-d9b4.jpg"
+          src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2F736x%2F54%2Fa9%2F0a%2F54a90a9ce7bfd8c0de99914d85a3ea4e.jpg&tbnid=QDCmzOqTj8CCrM&vet=10CAIQxiAoAGoXChMI6IuGqr-uggMVAAAAAB0AAAAAEAc..i&imgrefurl=https%3A%2F%2Fwww.pinterest.com%2Fpin%2Fperfectly-imperfect--489836896977396461%2F&docid=uCoQVCT_RQfIhM&w=736&h=981&itg=1&q=background%20image&ved=0CAIQxiAoAGoXChMI6IuGqr-uggMVAAAAAB0AAAAAEAc"
           alt="logo-image"
         />
         <SidebarAvatar
@@ -140,11 +140,11 @@ function Sidebar () {
       </SidebarStats>
       <SidebarBottom>
         <BottomText>Recent</BottomText>
-        {recentItem("Design")}
-        {recentItem("Programming")}
-        {recentItem("React.js")}
-        {recentItem("Redux")}
-        {recentItem("Next.js")}
+        {recentItem("hacking")}
+        {recentItem("programing")}
+        {recentItem("imrankahn")}
+        {recentItem("pakistan")}
+        {recentItem("fifa")}
       </SidebarBottom>
     </SidebarContainer>
   );

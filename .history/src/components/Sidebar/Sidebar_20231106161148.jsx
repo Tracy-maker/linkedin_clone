@@ -106,7 +106,7 @@ const HashSymbol = styled.span`
   margin-left: 5px;
 `;
 
-function Sidebar () {
+const Sidebar = () => {
   const recentItem = (topic) => (
     <RecentItem>
       <HashSymbol>#</HashSymbol>

@@ -106,7 +106,7 @@ const HashSymbol = styled.span`
   margin-left: 5px;
 `;
 
-function Sidebar () {
+const Sidebar = () => {
   const recentItem = (topic) => (
     <RecentItem>
       <HashSymbol>#</HashSymbol>
@@ -140,11 +140,11 @@ function Sidebar () {
       </SidebarStats>
       <SidebarBottom>
         <BottomText>Recent</BottomText>
-        {recentItem("Design")}
-        {recentItem("Programming")}
-        {recentItem("React.js")}
-        {recentItem("Redux")}
-        {recentItem("Next.js")}
+        {recentItem("hacking")}
+        {recentItem("programing")}
+        {recentItem("imrankahn")}
+        {recentItem("pakistan")}
+        {recentItem("fifa")}
       </SidebarBottom>
     </SidebarContainer>
   );

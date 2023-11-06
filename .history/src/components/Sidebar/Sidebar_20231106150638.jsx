@@ -106,7 +106,7 @@ const HashSymbol = styled.span`
   margin-left: 5px;
 `;
 
-function Sidebar () {
+const Sidebar = () => {
   const recentItem = (topic) => (
     <RecentItem>
       <HashSymbol>#</HashSymbol>
@@ -118,7 +118,7 @@ function Sidebar () {
     <SidebarContainer>
       <SidebarTop>
         <TopImage
-          src="https://marketplace.canva.com/EAD2962NKnQ/2/0/1600w/canva-rainbow-gradient-pink-and-purple-virtual-background-_Tcjok-d9b4.jpg"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrXJ2KHhaIrzbLGGpi4dyRdlsjMp5KQZZ2QA7C3HeFESqHLc7PPisI42A1BJY0jh3Nn44&usqp=CAU"
           alt="logo-image"
         />
         <SidebarAvatar
@@ -140,11 +140,11 @@ function Sidebar () {
       </SidebarStats>
       <SidebarBottom>
         <BottomText>Recent</BottomText>
-        {recentItem("Design")}
-        {recentItem("Programming")}
-        {recentItem("React.js")}
-        {recentItem("Redux")}
-        {recentItem("Next.js")}
+        {recentItem("hacking")}
+        {recentItem("programing")}
+        {recentItem("imrankahn")}
+        {recentItem("pakistan")}
+        {recentItem("fifa")}
       </SidebarBottom>
     </SidebarContainer>
   );
