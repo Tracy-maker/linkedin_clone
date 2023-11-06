@@ -10,11 +10,6 @@ const InputOptionContainer = styled.div`
   cursor: pointer;
   &:hover {
     background-color: whitesmoke;
-    border-radius: 10px;
-  }
-  & > h4 {
-    margin-left: 5px;
-    justify-content: space-evenly;
   }
 `;
 

@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import { Avatar } from "@mui/material";
-import InputOption from "../InputOption/InputOption";
-import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
-import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-import ShareIcon from "@mui/icons-material/Share";
-import SendIcon from "@mui/icons-material/Send";
+import styled from 'styled-components';
+import { Avatar } from '@mui/material';
+import InputOption from '../InputOption/InputOption';
+import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
+import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+import ShareIcon from '@mui/icons-material/Share';
+import SendIcon from '@mui/icons-material/Send';
 
 const PostContainer = styled.div`
   background-color: white;
@@ -38,7 +38,7 @@ const PostButton = styled.div`
   justify-content: space-evenly;
 `;
 
-function Post({ name, description, message, photourl }) {
+function Post({ name, description, message, photourl }){
   return (
     <PostContainer>
       <PostHeader>
@@ -53,16 +53,12 @@ function Post({ name, description, message, photourl }) {
       </PostBody>
       <PostButton>
         <InputOption Icon={ThumbUpOffAltIcon} title="Like" color="gray" />
-        <InputOption
-          Icon={ChatBubbleOutlineIcon}
-          title="Comment"
-          color="gray"
-        />
+        <InputOption Icon={ChatBubbleOutlineIcon} title="Comment" color="gray" />
         <InputOption Icon={ShareIcon} title="Share" color="gray" />
         <InputOption Icon={SendIcon} title="Send" color="gray" />
       </PostButton>
     </PostContainer>
   );
-}
+};
 
 export default Post;

@@ -12,9 +12,8 @@ const InputOptionContainer = styled.div`
     background-color: whitesmoke;
     border-radius: 10px;
   }
-  & > h4 {
+  &>h4{
     margin-left: 5px;
-    justify-content: space-evenly;
   }
 `;
 

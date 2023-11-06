@@ -54,7 +54,7 @@ const FeedInputOptions = styled.div`
 `;
 
 function Feed() {
-  const [input, setInput] = useState("");
+    const [input,setInput]=useState()
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -68,7 +68,7 @@ function Feed() {
     );
   }, []);
 
-  const sendPost = async(e) => {
+  const sendPost = (e) => {
     e.preventDefault();
     db.collection("posts").add({
       name: "rita",
@@ -83,11 +83,7 @@ function Feed() {
         <FeedInput>
           <CreateIcon />
           <form>
-            <input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              type="text"
-            />
+            <input value={input} onChange={e=>setInput(e.target.value)} type="text" />
             <button onClick={sendPost} type="submit">
               Send
             </button>
@@ -105,15 +101,11 @@ function Feed() {
         </FeedInputOptions>
       </FeedInputContainer>
 
-      {posts.map(({ id, data: { name, description, photoUrl, message } }) => (
-        <Post
-          key={id}
-          name={name}
-          description={description}
-          photourl={photoUrl}
-          message={message}
-        />
-      ))}
+      <Post
+        name="Rita"
+        description="This is a test"
+        message="rita say hello world"
+      />
     </FeedContainer>
   );
 }

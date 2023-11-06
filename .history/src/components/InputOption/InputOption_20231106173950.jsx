@@ -8,13 +8,8 @@ const InputOptionContainer = styled.div`
   color: gray;
   padding: 10px;
   cursor: pointer;
-  &:hover {
+  &:hover{
     background-color: whitesmoke;
-    border-radius: 10px;
-  }
-  & > h4 {
-    margin-left: 5px;
-    justify-content: space-evenly;
   }
 `;
 

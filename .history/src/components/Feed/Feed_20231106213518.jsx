@@ -6,8 +6,6 @@ import EventNoteIcon from "@mui/icons-material/EventNote";
 import CalendarViewDayIcon from "@mui/icons-material/CalendarViewDay";
 import InputOption from "../InputOption/InputOption";
 import Post from "../Post";
-import { useEffect, useState } from "react";
-import { db } from "../../firebase";
 
 const FeedContainer = styled.div`
   flex: 0.6;
@@ -54,43 +52,14 @@ const FeedInputOptions = styled.div`
 `;
 
 function Feed() {
-  const [input, setInput] = useState("");
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    db.collection("posts").onSnapshot((snapshot) =>
-      setPosts(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
-      )
-    );
-  }, []);
-
-  const sendPost = async(e) => {
-    e.preventDefault();
-    db.collection("posts").add({
-      name: "rita",
-      description: "this is a test",
-      message: "he said something",
-    });
-  };
-
   return (
     <FeedContainer>
       <FeedInputContainer>
         <FeedInput>
           <CreateIcon />
           <form>
-            <input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              type="text"
-            />
-            <button onClick={sendPost} type="submit">
-              Send
-            </button>
+            <input type="text" />
+            <button type="submit">Send</button>
           </form>
         </FeedInput>
         <FeedInputOptions>
@@ -105,15 +74,11 @@ function Feed() {
         </FeedInputOptions>
       </FeedInputContainer>
 
-      {posts.map(({ id, data: { name, description, photoUrl, message } }) => (
-        <Post
-          key={id}
-          name={name}
-          description={description}
-          photourl={photoUrl}
-          message={message}
-        />
-      ))}
+      <Post
+        name="Rita"
+        description="This is a test"
+        message="rita say hello world"
+      />
     </FeedContainer>
   );
 }

@@ -18,7 +18,7 @@ function App() {
       <Header />
       <LinkedInBody>
         <Sidebar />
-        <Feed />
+        <Feed/>
       </LinkedInBody>
     </LinkedInContainer>
   );

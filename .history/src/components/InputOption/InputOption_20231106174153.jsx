@@ -14,7 +14,6 @@ const InputOptionContainer = styled.div`
   }
   & > h4 {
     margin-left: 5px;
-    justify-content: space-evenly;
   }
 `;
 

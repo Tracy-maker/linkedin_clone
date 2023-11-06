@@ -54,7 +54,7 @@ const FeedInputOptions = styled.div`
 `;
 
 function Feed() {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState();
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -68,7 +68,7 @@ function Feed() {
     );
   }, []);
 
-  const sendPost = async(e) => {
+  const sendPost = (e) => {
     e.preventDefault();
     db.collection("posts").add({
       name: "rita",

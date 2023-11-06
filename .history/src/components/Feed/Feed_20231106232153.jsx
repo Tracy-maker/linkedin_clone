@@ -68,7 +68,7 @@ function Feed() {
     );
   }, []);
 
-  const sendPost = async(e) => {
+  const sendPost = (e) => {
     e.preventDefault();
     db.collection("posts").add({
       name: "rita",
