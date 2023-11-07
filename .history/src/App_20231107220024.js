@@ -9,15 +9,11 @@ import Login from "./components/Login";
 
 const LinkedInContainer = styled.div`
   background-color: #f3f2ef;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  height: auto;
 `;
 
 const LinkedInBody = styled.div`
   display: flex;
-  flex: 1;
 `;
 
 function App() {

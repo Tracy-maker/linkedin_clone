@@ -57,7 +57,7 @@ function Header() {
     <HeaderContainer>
       <LeftContainer>
         <LogoImage
-          src="https://i.ibb.co/4PCvv6f/Screenshot-2023-11-07-at-9-50-48-pm.png"
+        src="https://i.ibb.co/4PCvv6f/Screenshot-2023-11-07-at-9-50-48-pm.png" 
           alt="logo image"
         />
         <SearchContainer>
@@ -74,7 +74,7 @@ function Header() {
         <HeaderOption
           avatar="https://i.ibb.co/MRHHtS5/Wechat-IMG7.jpg"
           title="me"
-          size="300"
+          size='300'
         />
       </RightContainer>
     </HeaderContainer>
