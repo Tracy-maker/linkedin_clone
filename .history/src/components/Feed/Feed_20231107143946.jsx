@@ -6,7 +6,6 @@ import {
   addDoc,
   serverTimestamp,
   query,
-  orderBy,
 } from "firebase/firestore";
 import styled from "styled-components";
 import CreateIcon from "@mui/icons-material/Create";

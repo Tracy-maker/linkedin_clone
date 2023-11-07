@@ -6,7 +6,6 @@ import {
   addDoc,
   serverTimestamp,
   query,
-  orderBy,
 } from "firebase/firestore";
 import styled from "styled-components";
 import CreateIcon from "@mui/icons-material/Create";
@@ -66,7 +65,7 @@ function Feed() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    const q = query(collection(db, "posts"), orderBy("timestamp", "desc"));
+    const q = query(collection(db, "posts").orderBy("timestamp", "desc"));
     const unsubscribe = onSnapshot(q, (snapshot) =>
       setPosts(
         snapshot.docs.map((doc) => ({
