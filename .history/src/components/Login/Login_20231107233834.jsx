@@ -110,6 +110,7 @@ function Login() {
         <Input
           placeholder="Profile pic URL (optional)"
           type="text"
+          required
           value={profilePic}
           onChange={(e) => setProfilePic(e.target.value)}
         />

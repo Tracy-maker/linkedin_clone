@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { login } from "../../features/userSlice";
-import { auth } from "../../firebase";
-import { useDispatch } from "react-redux";
 
 const LoginContainer = styled.div`
   display: grid;
@@ -57,41 +54,17 @@ const RegisterLink = styled.span`
   color: #0177b7;
   cursor: pointer;
 `;
-
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [profilePic, setProfilePic] = useState("");
-  const dispatch = useDispatch();
 
   const register = () => {
     if (!fullName) {
       return alert("Please enter a full name...");
     }
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((userAuth) => {
-        userAuth.user
-          .updateProfile({
-            displayName: fullName,
-            photoURL: profilePic,
-          })
-          .then(() => {
-            dispatch(
-              login({
-                email: userAuth.user.email,
-                uid: userAuth.user.uid,
-                displayName: fullName,
-                photoUrl: profilePic,
-              })
-            );
-          });
-      })
-      .catch((err) => alert(err));
   };
-
-  const loginForm = () => {};
 
   return (
     <LoginContainer>
@@ -110,27 +83,15 @@ function Login() {
         <Input
           placeholder="Profile pic URL (optional)"
           type="text"
+          required
           value={profilePic}
           onChange={(e) => setProfilePic(e.target.value)}
         />
-        <Input
-          placeholder="Email"
-          type="email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <Input
-          placeholder="password"
-          type="password"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <SignInButton onClick={loginForm}>Sign In</SignInButton>
+        <Input placeholder="Email" type="email" required />
+        <Input placeholder="password" />
+        <SignInButton>Sign In</SignInButton>
         <OptionWords>
-          Not a member?{" "}
-          <RegisterLink onClick={register}> Register Now</RegisterLink>
+          Not a member? <RegisterLink> Register Now</RegisterLink>
         </OptionWords>
       </LoginForm>
     </LoginContainer>

@@ -69,29 +69,24 @@ function Login() {
     if (!fullName) {
       return alert("Please enter a full name...");
     }
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((userAuth) => {
-        userAuth.user
-          .updateProfile({
-            displayName: fullName,
-            photoURL: profilePic,
-          })
-          .then(() => {
-            dispatch(
-              login({
-                email: userAuth.user.email,
-                uid: userAuth.user.uid,
-                displayName: fullName,
-                photoUrl: profilePic,
-              })
-            );
-          });
-      })
-      .catch((err) => alert(err));
+    auth.createUserWithEmailAndPassword(email, password).then((userAuth) => {
+      userAuth.user
+        .updateProfile({
+          displayName: fullName,
+          photoURL: profilePic,
+        })
+        .then(() => {
+          dispatch(
+            login({
+              email: userAuth.user.email,
+              uid: userAuth.user.uid,
+              displayName: fullName,
+              photoUrl: profilePic,
+            })
+          );
+        });
+    });
   };
-
-  const loginForm = () => {};
 
   return (
     <LoginContainer>
@@ -110,6 +105,7 @@ function Login() {
         <Input
           placeholder="Profile pic URL (optional)"
           type="text"
+          required
           value={profilePic}
           onChange={(e) => setProfilePic(e.target.value)}
         />
@@ -120,7 +116,7 @@ function Login() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <Input
+        <input
           placeholder="password"
           type="password"
           required

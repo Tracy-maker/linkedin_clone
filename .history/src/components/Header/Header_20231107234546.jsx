@@ -9,7 +9,6 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { auth } from "../../firebase.js";
-import { logout } from "../../features/userSlice.js";
 
 const HeaderContainer = styled.div`
   position: sticky;

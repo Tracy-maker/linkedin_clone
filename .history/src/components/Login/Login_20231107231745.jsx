@@ -91,8 +91,6 @@ function Login() {
       .catch((err) => alert(err));
   };
 
-  const loginForm = () => {};
-
   return (
     <LoginContainer>
       <LinkedinImage
@@ -110,6 +108,7 @@ function Login() {
         <Input
           placeholder="Profile pic URL (optional)"
           type="text"
+          required
           value={profilePic}
           onChange={(e) => setProfilePic(e.target.value)}
         />
@@ -120,7 +119,7 @@ function Login() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <Input
+        <input
           placeholder="password"
           type="password"
           required

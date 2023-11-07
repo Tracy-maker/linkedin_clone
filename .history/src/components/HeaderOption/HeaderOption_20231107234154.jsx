@@ -26,7 +26,7 @@ const HeaderOptionIcon = styled.img`
   width: 25px;
 `;
 
-function HeaderOption({ avatar, Icon, title, onClick }) {
+function HeaderOption ({ avatar, Icon, title, onClick }){
   return (
     <HeaderOptionContainer>
       {Icon && <HeaderOptionIcon as={Icon} />}
@@ -34,6 +34,6 @@ function HeaderOption({ avatar, Icon, title, onClick }) {
       <HeaderOptionTitle>{title}</HeaderOptionTitle>
     </HeaderOptionContainer>
   );
-}
+};
 
 export default HeaderOption;

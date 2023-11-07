@@ -4,7 +4,7 @@ import Sidebar from "./components/Sidebar";
 import styled from "styled-components";
 import Feed from "./components/Feed";
 import { useDispatch, useSelector } from "react-redux";
-import { login, logout, selectUser } from "./features/userSlice";
+import { login,selectUser } from "./features/userSlice";
 import Login from "./components/Login";
 import { auth } from "./firebase";
 
@@ -40,7 +40,7 @@ function App() {
         dispatch(logout());
       }
     });
-  },[]);
+  });
 
   return (
     <LinkedInContainer>

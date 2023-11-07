@@ -4,7 +4,7 @@ import Sidebar from "./components/Sidebar";
 import styled from "styled-components";
 import Feed from "./components/Feed";
 import { useDispatch, useSelector } from "react-redux";
-import { login, logout, selectUser } from "./features/userSlice";
+import { selectUser } from "./features/userSlice";
 import Login from "./components/Login";
 import { auth } from "./firebase";
 
@@ -27,20 +27,18 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged((userAuth) => {
-      if (userAuth) {
+      if(userAuth){
         dispatch(
           login({
-            email: userAuth.email,
-            uid: userAuth.uid,
-            displayName: userAuth.displayName,
-            photoUrl: userAuth.photoUrl,
+            email:userAuth.email,
+            uid:userAuth.uid,
+            displayName:userAuth.displayName,
+            photoUrl:userAuth.photoUrl
           })
-        );
-      } else {
-        dispatch(logout());
+        )
       }
     });
-  },[]);
+  });
 
   return (
     <LinkedInContainer>

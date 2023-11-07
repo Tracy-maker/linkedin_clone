@@ -8,8 +8,6 @@ import ChatIcon from "@mui/icons-material/Chat";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import { auth } from "../../firebase.js";
-import { logout } from "../../features/userSlice.js";
 
 const HeaderContainer = styled.div`
   position: sticky;
@@ -56,12 +54,13 @@ const RightContainer = styled.div`
 `;
 
 function Header() {
+
   const dispatch = useDispatch();
 
-  const logoutOfApp = () => {
-    dispatch(logout());
+  const logoutOfApp = ()=>{
+    dispatch(logout);
     auth.signOut();
-  };
+  }
 
   return (
     <HeaderContainer>
@@ -85,7 +84,7 @@ function Header() {
           avatar="https://i.ibb.co/MRHHtS5/Wechat-IMG7.jpg"
           title="me"
           size="300"
-          onClick={logoutOfApp}
+          onClick={}
         />
       </RightContainer>
     </HeaderContainer>
