@@ -1,6 +1,6 @@
 // Feed.jsx
 import { useEffect, useState } from 'react';
-import { db } from '../../firebase';
+import { db } from '../../firebase'; // Ensure correct relative path
 import { collection, onSnapshot, addDoc, serverTimestamp } from 'firebase/firestore';
 import styled from 'styled-components';
 import CreateIcon from '@mui/icons-material/Create';

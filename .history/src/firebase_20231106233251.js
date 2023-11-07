@@ -18,3 +18,22 @@ export const db = getFirestore(app);
 export default app;
 
 
+export const addPost = async (post) => {
+    try {
+      await addDoc(collection(db, "posts"), post);
+      console.log("Posted secessufully");
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  
+  export const getPost = async () => {
+    let posts = [];
+    try {
+      const data = await getDocs(collection(db, "posts"));
+      data.forEach((doc) => posts.push({ id: doc.id, data: doc.data() }));
+    } catch (e) {
+      console.log(e);
+    }
+    return posts;
+  };
