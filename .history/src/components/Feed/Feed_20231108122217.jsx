@@ -129,7 +129,7 @@ function Feed() {
           key={id}
           name={name}
           description={description}
-          photoUrl={photoUrl}
+          photourl={photoUrl}
           message={message}
         />
       ))}

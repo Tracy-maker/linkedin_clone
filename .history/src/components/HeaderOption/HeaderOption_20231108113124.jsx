@@ -29,11 +29,11 @@ const HeaderOptionIcon = styled.img`
 `;
 
 function HeaderOption({ avatar, Icon, title, onClick }) {
-  const user = useSelector(selectUser);
+  const user = useSelector(selectUser)
   return (
     <HeaderOptionContainer onClick={onClick}>
       {Icon && <HeaderOptionIcon as={Icon} />}
-      {avatar && <Avatar src={user?.photoUrl} >{user?.email[0]}</Avatar>}
+      {avatar && <Avatar src={user} />}
       <HeaderOptionTitle>{title}</HeaderOptionTitle>
     </HeaderOptionContainer>
   );

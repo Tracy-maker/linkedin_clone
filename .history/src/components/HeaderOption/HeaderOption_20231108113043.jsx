@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { Avatar } from "@material-ui/core";
-import { useSelector } from "react-redux";
-import { selectUser } from "../../features/userSlice";
 
 const HeaderOptionContainer = styled.div`
   display: flex;
@@ -29,11 +27,10 @@ const HeaderOptionIcon = styled.img`
 `;
 
 function HeaderOption({ avatar, Icon, title, onClick }) {
-  const user = useSelector(selectUser);
   return (
     <HeaderOptionContainer onClick={onClick}>
       {Icon && <HeaderOptionIcon as={Icon} />}
-      {avatar && <Avatar src={user?.photoUrl} >{user?.email[0]}</Avatar>}
+      {avatar && <Avatar src={avatar} />}
       <HeaderOptionTitle>{title}</HeaderOptionTitle>
     </HeaderOptionContainer>
   );

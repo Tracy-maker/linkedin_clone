@@ -89,7 +89,7 @@ function Feed() {
       name: user.displayName,
       description: user.email,
       message: input,
-      photoUrl: user.photoUrl || "",
+      photoUrl: user.photoUrl||"",
       timestamp: serverTimestamp(),
     });
 
@@ -129,7 +129,7 @@ function Feed() {
           key={id}
           name={name}
           description={description}
-          photoUrl={photoUrl}
+          photourl={photoUrl}
           message={message}
         />
       ))}

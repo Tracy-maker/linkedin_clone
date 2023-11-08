@@ -38,11 +38,11 @@ const PostButton = styled.div`
   justify-content: space-evenly;
 `;
 
-function Post({ name, description, message, photoUrl }) {
+function Post({ name, description, message, photourl }) {
   return (
     <PostContainer>
       <PostHeader>
-        <Avatar src={photoUrl}>{name[0]}</Avatar>
+        <Avatar src={photourl}>{name[0]}</Avatar>
         <PostInfo>
           <h2>{name}</h2>
           <p>{description}</p>

@@ -33,7 +33,7 @@ function HeaderOption({ avatar, Icon, title, onClick }) {
   return (
     <HeaderOptionContainer onClick={onClick}>
       {Icon && <HeaderOptionIcon as={Icon} />}
-      {avatar && <Avatar src={user?.photoUrl} >{user?.email[0]}</Avatar>}
+      {avatar && <Avatar src={user} />}
       <HeaderOptionTitle>{title}</HeaderOptionTitle>
     </HeaderOptionContainer>
   );

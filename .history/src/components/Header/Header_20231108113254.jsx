@@ -82,7 +82,7 @@ function Header() {
         <HeaderOption Icon={ChatIcon} title="Messaging" />
         <HeaderOption Icon={NotificationsIcon} title="Notifications" />
         <HeaderOption
-          avatar={true}
+          avatar="https://i.ibb.co/MRHHtS5/Wechat-IMG7.jpg"
           title="me"
           size="300"
           onClick={logoutOfApp}

@@ -99,23 +99,26 @@ function Login() {
       });
   };
 
-  const loginForm = async (e) => {
+  const loginForm = (e) => {
     e.preventDefault();
-
-    try {
-      const userAuth = await signInWithEmailAndPassword(auth, email, password);
-      dispatch(
-        login({
-          email: userAuth.user.email,
-          uid: userAuth.user.uid,
-          displayName: userAuth.user.displayName,
-          profileUrl: userAuth.user.photoURL,
-        })
-      );
-    } catch (error) {
-      console.error("Sign-in error:", error.message);
-      alert("Invalid login credentials. Please check your email and password.");
-    }
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userAuth) => {
+        dispatch(
+          login({
+            email: userAuth.user.email,
+            uid: userAuth.user.uid,
+            displayName: userAuth.user.displayName,
+            profileUrl: userAuth.user.photoURL,
+          })
+        );
+      })
+      .catch((error) => {
+        // Log the error message to the console
+        console.error("Sign-in error:", error.message);
+        alert(
+          "Invalid login credentials. Please check your email and password."
+        );
+      });
   };
   return (
     <LoginContainer>

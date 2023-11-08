@@ -75,13 +75,12 @@ function Login() {
       return alert("Please enter a full name...");
     }
 
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(async (userAuth) => {
-        try {
-          await updateProfile(userAuth.user, {
-            displayName: fullName,
-            photoURL: profilePic,
-          });
+    createUserWithEmailAndPassword(auth, email, password).then((userAuth) => {
+      return updateProfile(userAuth.user, {
+        displayName: fullName,
+        photoURL: profilePic,
+      })
+        .then(() => {
           dispatch(
             login({
               email: userAuth.user.email,
@@ -90,32 +89,29 @@ function Login() {
               photoUrl: profilePic,
             })
           );
-        } catch (err) {
-          return alert(err);
-        }
-      })
-      .catch((error) => {
-        alert(`Registration failed: ${error.message}`);
-      });
-  };
-
-  const loginForm = async (e) => {
-    e.preventDefault();
-
-    try {
-      const userAuth = await signInWithEmailAndPassword(auth, email, password);
-      dispatch(
-        login({
-          email: userAuth.user.email,
-          uid: userAuth.user.uid,
-          displayName: userAuth.user.displayName,
-          profileUrl: userAuth.user.photoURL,
         })
-      );
-    } catch (error) {
-      console.error("Sign-in error:", error.message);
-      alert("Invalid login credentials. Please check your email and password.");
-    }
+        .catch((err) => alert(err));
+    })
+    .catch((error) => {
+      // Handle registration error
+      alert(`Registration failed: ${error.message}`);
+    });
+};
+
+  const loginForm = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userAuth) => {
+        dispatch(
+          login({
+            email: userAuth.user.email,
+            uid: userAuth.user.uid,
+            displayName: userAuth.user.displayName,
+            profileUrl: userAuth.user.photoURL,
+          })
+        );
+      })
+      .catch((error) => alert(error));
   };
   return (
     <LoginContainer>
@@ -154,7 +150,7 @@ function Login() {
         <SignInButton onClick={loginForm}>Sign In</SignInButton>
         <OptionWords>
           Not a member?{" "}
-          <RegisterLink onClick={register}>Register Now</RegisterLink>
+          <RegisterLink onClick={register}> Register Now</RegisterLink>
         </OptionWords>
       </LoginForm>
     </LoginContainer>

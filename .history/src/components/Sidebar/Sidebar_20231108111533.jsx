@@ -127,9 +127,10 @@ function Sidebar() {
         />
         <SidebarAvatar src={user.photoUrl} alt="logo-image">
           {user.email[0]}
-        </SidebarAvatar>
-        <TopHeading>{user.displayName}</TopHeading>
-        <TopSubHeading>{user.email}</TopSubHeading>
+        </SidebarAvatar>{" "}
+        />
+        <TopHeading>Yingxin Zhang</TopHeading>
+        <TopSubHeading>ydlvns@gmail.com</TopSubHeading>
       </SidebarTop>
       <SidebarStats>
         <StatContainer>

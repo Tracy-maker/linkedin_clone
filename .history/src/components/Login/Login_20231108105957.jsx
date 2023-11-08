@@ -3,11 +3,6 @@ import styled from "styled-components";
 import { login } from "../../features/userSlice";
 import { auth } from "../../firebase";
 import { useDispatch } from "react-redux";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  updateProfile,
-} from "firebase/auth";
 
 const LoginContainer = styled.div`
   display: grid;
@@ -74,49 +69,44 @@ function Login() {
     if (!fullName) {
       return alert("Please enter a full name...");
     }
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(async (userAuth) => {
-        try {
-          await updateProfile(userAuth.user, {
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((userAuth) => {
+        userAuth.user
+          .updateProfile({
             displayName: fullName,
             photoURL: profilePic,
+          })
+          .then(() => {
+            dispatch(
+              login({
+                email: userAuth.user.email,
+                uid: userAuth.user.uid,
+                displayName: fullName,
+                photoUrl: profilePic,
+              })
+            );
           });
-          dispatch(
-            login({
-              email: userAuth.user.email,
-              uid: userAuth.user.uid,
-              displayName: fullName,
-              photoUrl: profilePic,
-            })
-          );
-        } catch (err) {
-          return alert(err);
-        }
       })
-      .catch((error) => {
-        alert(`Registration failed: ${error.message}`);
-      });
+      .catch((err) => alert(err));
   };
 
-  const loginForm = async (e) => {
+  const loginForm = (e) => {
     e.preventDefault();
-
-    try {
-      const userAuth = await signInWithEmailAndPassword(auth, email, password);
-      dispatch(
-        login({
-          email: userAuth.user.email,
-          uid: userAuth.user.uid,
-          displayName: userAuth.user.displayName,
-          profileUrl: userAuth.user.photoURL,
-        })
-      );
-    } catch (error) {
-      console.error("Sign-in error:", error.message);
-      alert("Invalid login credentials. Please check your email and password.");
-    }
+    auth
+    .signInWithEmailAndPassword(email, password)
+    .then((userAuth) => {
+        dispatch(
+            login({
+                email: userAuth.user.email,
+                uid: userAuth.user.uid,
+                displayName: userAuth.user.displayName,
+                profileUrl: userAuth.user.profileUrl,
+            })
+        )
+    })
   };
+
   return (
     <LoginContainer>
       <LinkedinImage
@@ -154,7 +144,7 @@ function Login() {
         <SignInButton onClick={loginForm}>Sign In</SignInButton>
         <OptionWords>
           Not a member?{" "}
-          <RegisterLink onClick={register}>Register Now</RegisterLink>
+          <RegisterLink onClick={register}> Register Now</RegisterLink>
         </OptionWords>
       </LoginForm>
     </LoginContainer>

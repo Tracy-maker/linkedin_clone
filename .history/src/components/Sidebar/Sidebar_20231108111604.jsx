@@ -129,7 +129,7 @@ function Sidebar() {
           {user.email[0]}
         </SidebarAvatar>
         <TopHeading>{user.displayName}</TopHeading>
-        <TopSubHeading>{user.email}</TopSubHeading>
+        <TopSubHeading>ydlvns@gmail.com</TopSubHeading>
       </SidebarTop>
       <SidebarStats>
         <StatContainer>

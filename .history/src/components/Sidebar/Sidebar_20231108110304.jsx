@@ -125,11 +125,12 @@ function Sidebar() {
           src="https://marketplace.canva.com/EAD2962NKnQ/2/0/1600w/canva-rainbow-gradient-pink-and-purple-virtual-background-_Tcjok-d9b4.jpg"
           alt="logo-image"
         />
-        <SidebarAvatar src={user.photoUrl} alt="logo-image">
-          {user.email[0]}
-        </SidebarAvatar>
-        <TopHeading>{user.displayName}</TopHeading>
-        <TopSubHeading>{user.email}</TopSubHeading>
+        <SidebarAvatar
+          src="https://i.ibb.co/MRHHtS5/Wechat-IMG7.jpg"
+          alt="logo-image"
+        />
+        <TopHeading>Yingxin Zhang</TopHeading>
+        <TopSubHeading>ydlvns@gmail.com</TopSubHeading>
       </SidebarTop>
       <SidebarStats>
         <StatContainer>

@@ -128,8 +128,8 @@ function Sidebar() {
         <SidebarAvatar src={user.photoUrl} alt="logo-image">
           {user.email[0]}
         </SidebarAvatar>
-        <TopHeading>{user.displayName}</TopHeading>
-        <TopSubHeading>{user.email}</TopSubHeading>
+        <TopHeading>{user.displayName</TopHeading>
+        <TopSubHeading>ydlvns@gmail.com</TopSubHeading>
       </SidebarTop>
       <SidebarStats>
         <StatContainer>

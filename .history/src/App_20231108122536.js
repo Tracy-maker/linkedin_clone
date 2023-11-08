@@ -19,9 +19,6 @@ const LinkedInContainer = styled.div`
 const LinkedInBody = styled.div`
   display: flex;
   margin-top: 35px;
-  max-width: 1200px;
-  margin-left: 20px;
-  margin-right: 20px;
 `;
 
 function App() {
@@ -43,7 +40,7 @@ function App() {
         dispatch(logout());
       }
     });
-  }, []);
+  },[]);
 
   return (
     <LinkedInContainer>

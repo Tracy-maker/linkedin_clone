@@ -101,7 +101,7 @@ function Login() {
 
   const loginForm = async (e) => {
     e.preventDefault();
-
+    
     try {
       const userAuth = await signInWithEmailAndPassword(auth, email, password);
       dispatch(
@@ -113,8 +113,8 @@ function Login() {
         })
       );
     } catch (error) {
-      console.error("Sign-in error:", error.message);
-      alert("Invalid login credentials. Please check your email and password.");
+      console.error('Sign-in error:', error.message);
+      alert('Invalid login credentials. Please check your email and password.');
     }
   };
   return (
