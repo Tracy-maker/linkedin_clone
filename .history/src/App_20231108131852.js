@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./features/userSlice";
 import Login from "./components/Login";
 import { auth } from "./firebase";
-import Widgets from "./components/Widgets";
 
 const LinkedInContainer = styled.div`
   background-color: #f3f2ef;
@@ -49,13 +48,13 @@ function App() {
   return (
     <LinkedInContainer>
       <Header />
+
       {!user ? (
         <Login />
       ) : (
         <LinkedInBody>
           <Sidebar />
           <Feed />
-          <Widgets />
         </LinkedInBody>
       )}
     </LinkedInContainer>

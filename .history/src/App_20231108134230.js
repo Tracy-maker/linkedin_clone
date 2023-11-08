@@ -49,13 +49,14 @@ function App() {
   return (
     <LinkedInContainer>
       <Header />
+
       {!user ? (
         <Login />
       ) : (
         <LinkedInBody>
           <Sidebar />
           <Feed />
-          <Widgets />
+          <Widgets/>
         </LinkedInBody>
       )}
     </LinkedInContainer>

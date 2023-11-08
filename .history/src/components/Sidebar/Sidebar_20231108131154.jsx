@@ -7,7 +7,7 @@ const SidebarContainer = styled.div`
   position: sticky;
   top: 80px;
   flex: 0.2;
-  width: 1000px;
+  width: 100px;
   border-radius: 10px;
   text-align: center;
   height: fit-content;

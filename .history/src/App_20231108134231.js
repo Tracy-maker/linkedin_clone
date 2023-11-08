@@ -49,6 +49,7 @@ function App() {
   return (
     <LinkedInContainer>
       <Header />
+
       {!user ? (
         <Login />
       ) : (

@@ -84,6 +84,7 @@ function Header() {
         <HeaderOption
           avatar={true}
           title="me"
+        
           onClick={logoutOfApp}
         />
       </RightContainer>

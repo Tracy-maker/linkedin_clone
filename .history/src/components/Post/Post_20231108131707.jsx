@@ -41,7 +41,7 @@ const PostButton = styled.div`
 
 const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {
   return (
-    <PostContainer ref={ref}>
+    <PostContainer>
       <PostHeader>
         <Avatar src={photoUrl}>{name[0]}</Avatar>
         <PostInfo>

@@ -18,7 +18,6 @@ import InputOption from "../InputOption/InputOption";
 import Post from "../Post";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
-import FlipMove from "react-flip-move";
 
 const FeedContainer = styled.div`
   flex: 0.6;

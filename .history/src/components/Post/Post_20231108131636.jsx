@@ -5,7 +5,6 @@ import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import ShareIcon from "@mui/icons-material/Share";
 import SendIcon from "@mui/icons-material/Send";
-import { forwardRef } from "react";
 
 const PostContainer = styled.div`
   background-color: white;
@@ -41,7 +40,7 @@ const PostButton = styled.div`
 
 const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {
   return (
-    <PostContainer ref={ref}>
+    <PostContainer>
       <PostHeader>
         <Avatar src={photoUrl}>{name[0]}</Avatar>
         <PostInfo>
@@ -64,6 +63,6 @@ const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {
       </PostButton>
     </PostContainer>
   );
-});
+}
 
 export default Post;
